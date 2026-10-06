@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eiro's Shipworks — Precision Vessel Craft</title>
+  <meta name="description" content="Eiro's Shipworks — Trusted parts and bespoke vessel craftsmanship for every sea-worthy journey." />
+
+  <!-- Fonts: Fraunces (editorial serif) + Inter (clean sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Spline viewer module -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.86/build/spline-viewer.js"></script>
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="shipworkswebsite.css" />
+</head>
+<body>
+
+  <!-- Global paper-grain texture overlay (pure decoration) -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Eiro's Shipworks home">
+        <span class="brand-mark" aria-hidden="true">
+          <!-- Ship's wheel -->
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer wheel -->
+            <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2"/>
+            <circle cx="20" cy="20" r="10" stroke="currentColor" stroke-width="1.4"/>
+            <!-- Hub -->
+            <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+            <!-- Spokes: 8 total -->
+            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="20" y1="2"  x2="20" y2="8"/>
+              <line x1="20" y1="32" x2="20" y2="38"/>
+              <line x1="2"  y1="20" x2="8"  y2="20"/>
+              <line x1="32" y1="20" x2="38" y2="20"/>
+              <line x1="7.3"  y1="7.3"  x2="11.5" y2="11.5"/>
+              <line x1="28.5" y1="28.5" x2="32.7" y2="32.7"/>
+              <line x1="32.7" y1="7.3"  x2="28.5" y2="11.5"/>
+              <line x1="11.5" y1="28.5" x2="7.3"  y2="32.7"/>
+            </g>
+            <!-- Handle pegs -->
+            <g fill="currentColor">
+              <circle cx="20" cy="4.5" r="1.4"/>
+              <circle cx="20" cy="35.5" r="1.4"/>
+              <circle cx="4.5" cy="20" r="1.4"/>
+              <circle cx="35.5" cy="20" r="1.4"/>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Eiro's</span>
+          <span class="brand-sub">Shipworks</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#parts">Parts</a></li>
+          <li><a href="#build">Build</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#build" class="nav-cta">Start a Build</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+
+      <!-- Compass rose watermark -->
+      <svg class="hero-compass" viewBox="0 0 200 200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="currentColor" stroke-width="0.7">
+          <circle cx="100" cy="100" r="96"/>
+          <circle cx="100" cy="100" r="78"/>
+          <circle cx="100" cy="100" r="56"/>
+          <circle cx="100" cy="100" r="34"/>
+        </g>
+        <g fill="currentColor">
+          <!-- Cardinal points (long) -->
+          <polygon points="100,4 108,92 100,100 92,92"/>
+          <polygon points="100,196 108,108 100,100 92,108"/>
+          <polygon points="4,100 92,92 100,100 92,108"/>
+          <polygon points="196,100 108,92 100,100 108,108"/>
+          <!-- Intercardinal points (short) -->
+          <polygon points="32,32 96,96 88,96" opacity="0.75"/>
+          <polygon points="168,32 104,96 112,96" opacity="0.75"/>
+          <polygon points="32,168 96,104 96,112" opacity="0.75"/>
+          <polygon points="168,168 104,104 112,104" opacity="0.75"/>
+        </g>
+        <circle cx="100" cy="100" r="5" fill="currentColor"/>
+      </svg>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Est. · Marine Craft Workshop</p>
+          <h1>
+            Built to <em>endure</em> the open sea.
+          </h1>
+          <p class="hero-lede">
+            From hand-forged cannons to bespoke hulls, Eiro's Shipworks equips
+            mariners with parts and vessels made for the long voyage.
+          </p>
+          <div class="hero-actions">
+            <a href="#build" class="btn btn-primary">Build a Goromaru</a>
+            <a href="#parts" class="btn btn-ghost">Browse Parts</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div>
+              <dt>Vessels Crafted</dt>
+              <dd>1,240+</dd>
+            </div>
+            <div>
+              <dt>Years Afloat</dt>
+              <dd>38</dd>
+            </div>
+            <div>
+              <dt>Ports Served</dt>
+              <dd>62</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-frame">
+            <!-- Manuscript corner brackets -->
+            <span class="frame-corner frame-corner--tl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner--tr" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner--bl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner--br" aria-hidden="true"></span>
+
+            <img src="images/custom-logo.png" alt="Eiro's Shipworks crest" class="hero-logo" />
+          </div>
+          <p class="hero-visual-caption">
+            <span>Fig. 01</span> — Workshop crest, established at the Raymundo Docks.
+          </p>
+        </div>
+      </div>
+
+      <!-- Rope divider -->
+      <div class="rule-rope" aria-hidden="true">
+        <svg viewBox="0 0 400 12" preserveAspectRatio="none">
+          <path d="M0,6 Q25,1 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+                fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M0,6 Q25,11 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+                fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTS / SERVICES
+    ============================================================ -->
+    <section class="section parts" id="parts">
+      <div class="section-head">
+        <p class="eyebrow">What we offer</p>
+        <h2>Two crafts. One standard.</h2>
+        <p class="section-lede">
+          Whether you're refitting a seasoned vessel or commissioning something
+          entirely new, every piece leaves our docks inspected and seaworthy.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-index">01</span>
+          <h3>Ship Parts</h3>
+          <p>
+            Cannons, sails, hulls, and rigging — stocked, tested, and ready to
+            outfit your vessel with hardware that holds under pressure.
+          </p>
+          <a href="#build" class="card-link">View the catalogue →</a>
+        </article>
+
+        <article class="card">
+          <span class="card-index">02</span>
+          <h3>Build-a-Goromaru</h3>
+          <p>
+            A bespoke commission service. Choose your loadout, and our
+            shipwrights assemble a vessel shaped around your voyage.
+          </p>
+          <a href="#build" class="card-link">Begin your commission →</a>
+        </article>
+      </div>
+
+      <!-- Rope divider -->
+      <div class="rule-rope rule-rope--inner" aria-hidden="true">
+        <svg viewBox="0 0 400 12" preserveAspectRatio="none">
+          <path d="M0,6 Q25,1 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+                fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M0,6 Q25,11 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+                fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BUILD SECTION
+    ============================================================ -->
+    <section class="section build" id="build">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">Commission your vessel</p>
+        <h2>Build a Goromaru</h2>
+        <p class="section-lede">
+          Configure the loadout, review the components, and submit your
+          commission. Our dockmaster will confirm within two tides.
+        </p>
+      </div>
+
+      <div class="build-layout">
+
+        <!-- LEFT: Component gallery + 3D viewer -->
+        <div class="build-gallery">
+          <div class="gallery-head">
+            <h3>Component Reference</h3>
+            <p>Six systems, endlessly reconfigurable.</p>
+          </div>
+
+          <div class="image-preview">
+            <figure class="viewer">
+              <div class="image-box"><img src="images/shark-cannon.jpg" alt="Shark cannon component" /></div>
+              <figcaption>Cannons</figcaption>
+            </figure>
+            <figure class="viewer">
+              <div class="image-box"><img src="images/machine-gun.jpg" alt="Machine gun component" /></div>
+              <figcaption>Machine Guns</figcaption>
+            </figure>
+            <figure class="viewer">
+              <div class="image-box"><img src="images/rocket-launcher.jpg" alt="Rocket launcher component" /></div>
+              <figcaption>Rocket Launcher</figcaption>
+            </figure>
+            <figure class="viewer">
+              <div class="image-box"><img src="images/deck.jpg" alt="Hull component" /></div>
+              <figcaption>Hull</figcaption>
+            </figure>
+            <figure class="viewer">
+              <div class="image-box"><img src="images/sail.jpg" alt="Sail component" /></div>
+              <figcaption>Sails</figcaption>
+            </figure>
+            <figure class="viewer">
+              <div class="image-box"><img src="images/treasure-map.jpg" alt="Miscellaneous component" /></div>
+              <figcaption>Others</figcaption>
+            </figure>
+          </div>
+
+          <div class="spline-container">
+            <div class="spline-head">
+              <span class="spline-dot" aria-hidden="true"></span>
+              <span>Live 3D Preview</span>
+            </div>
+            <spline-viewer url="https://prod.spline.design/vnIlkOJT9keLNnAY/scene.splinecode"></spline-viewer>
+          </div>
+        </div>
+
+        <!-- RIGHT: Commission form -->
+        <div class="build-form-wrap">
+          <form class="build-form" novalidate>
+
+            <!-- Customer details -->
+            <fieldset class="form-section">
+              <legend>
+                <span class="legend-num">01</span>
+                <span class="legend-text">Customer Details</span>
+              </legend>
+
+              <div class="field">
+                <label for="customer_name">Full Name</label>
+                <input type="text" name="customer_name" id="customer_name" placeholder="Jane Marlow" required />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="customer_no">Mobile Number</label>
+                  <input type="tel" name="customer_no" id="customer_no" placeholder="09XXXXXXXXX" pattern="09[0-9]{9}" required />
+                </div>
+                <div class="field">
+                  <label for="customer_email">Email</label>
+                  <input type="email" name="customer_email" id="customer_email" placeholder="you@harbor.co" required />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Ship apparatus -->
+            <fieldset class="form-section">
+              <legend>
+                <span class="legend-num">02</span>
+                <span class="legend-text">Ship Apparatus</span>
+              </legend>
+
+              <div class="field">
+                <label for="crew_num">Number of Crewmates</label>
+                <input type="number" name="crew_num" id="crew_num" min="1" max="10" value="4" />
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Cannons</p>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="cannons" value="normal" checked><span>Normal</span></label>
+                  <label class="opt"><input type="radio" name="cannons" value="laser"><span>Laser</span></label>
+                  <label class="opt"><input type="radio" name="cannons" value="ethereal"><span>Ethereal</span></label>
+                  <label class="opt"><input type="radio" name="cannons" value="shark"><span>Shark</span></label>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Machine Guns</p>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="machine_guns" value="machine gun" checked><span>Machine Gun</span></label>
+                  <label class="opt"><input type="radio" name="machine_guns" value="ethereal machine gun"><span>Ethereal</span></label>
+                  <label class="opt"><input type="radio" name="machine_guns" value="frozen machine gun"><span>Frozen</span></label>
+                  <label class="opt"><input type="radio" name="machine_guns" value="golden machine gun"><span>Golden</span></label>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Rocket Launcher</p>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="rocket_launcher" value="rocket launcher" checked><span>Rocket</span></label>
+                  <label class="opt"><input type="radio" name="rocket_launcher" value="squid rocket launcher"><span>Squid</span></label>
+                  <label class="opt"><input type="radio" name="rocket_launcher" value="toxic rocket launcher"><span>Toxic</span></label>
+                  <label class="opt"><input type="radio" name="rocket_launcher" value="golden rocket launcher"><span>Golden</span></label>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Hull</p>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="hull" value="default" checked><span>Default</span></label>
+                  <label class="opt"><input type="radio" name="hull" value="dragon"><span>Dragon</span></label>
+                  <label class="opt"><input type="radio" name="hull" value="hannya"><span>Hannya</span></label>
+                  <label class="opt"><input type="radio" name="hull" value="dragonfish"><span>Dragonfish</span></label>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Sails</p>
+                <div class="options">
+                  <label class="opt"><input type="radio" name="sail" value="default" checked><span>Default</span></label>
+                  <label class="opt"><input type="radio" name="sail" value="majima"><span>Majima</span></label>
+                  <label class="opt"><input type="radio" name="sail" value="kiryu"><span>Kiryu</span></label>
+                  <label class="opt"><input type="radio" name="sail" value="dojima"><span>Dojima</span></label>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <p class="option-label">Others</p>
+                <div class="options">
+                  <label class="opt"><input type="checkbox" name="misc" value="Treasure Map"><span>Treasure Map</span></label>
+                  <label class="opt"><input type="checkbox" name="misc" value="Sharkhead"><span>Sharkhead</span></label>
+                  <label class="opt"><input type="checkbox" name="misc" value="Karaoke Player"><span>Karaoke Player</span></label>
+                  <label class="opt"><input type="checkbox" name="misc" value="Sofa"><span>Sofa</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="ship_size">Ship Size</label>
+                <select name="ship_size" id="ship_size">
+                  <option value="smol">Smol — coastal</option>
+                  <option value="med" selected>Medium — passage</option>
+                  <option value="huge">Huge — expedition</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <!-- Delivery details -->
+            <fieldset class="form-section">
+              <legend>
+                <span class="legend-num">03</span>
+                <span class="legend-text">Delivery Details</span>
+              </legend>
+
+              <div class="field">
+                <label for="delivery_addy">Delivery Address</label>
+                <textarea rows="3" placeholder="Honolulu, Hawaii..." name="delivery_addy" id="delivery_addy" required></textarea>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="delivery_date">Preferred Date</label>
+                  <input type="date" name="delivery_date" id="delivery_date" required />
+                </div>
+                <div class="field">
+                  <label for="delivery_time">Preferred Time</label>
+                  <input type="time" name="delivery_time" id="delivery_time" required />
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Submit Commission</button>
+              <button type="reset" class="btn btn-ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="contact">
+
+    <!-- Rope divider riding the top edge of the footer -->
+    <div class="rule-rope rule-rope--footer" aria-hidden="true">
+      <svg viewBox="0 0 400 12" preserveAspectRatio="none">
+        <path d="M0,6 Q25,1 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+              fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M0,6 Q25,11 50,6 T100,6 T150,6 T200,6 T250,6 T300,6 T350,6 T400,6"
+              fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/>
+      </svg>
+    </div>
+
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>Eiro's Shipworks</h2>
+        <p>
+          A marine craft workshop outfitting vessels and crews since the
+          founding of the Raymundo Docks.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Visit</h3>
+        <p>1234 Raymundo Docks</p>
+        <p>Harbour District</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:eiro.shipworks@up.edu.ph">eiro.shipworks@up.edu.ph</a></p>
+        <p><a href="tel:+639123456789">+63 912 345 6789</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Hours</h3>
+        <p>Mon – Fri · 08:00 – 18:00</p>
+        <p>Sat · 09:00 – 14:00</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eiro's Shipworks. All rights reserved.</p>
+      <p>Crafted at the docks.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
